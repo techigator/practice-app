@@ -3,6 +3,7 @@
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\FrontController;
+use App\Http\Controllers\GitHubController;
 use App\Http\Controllers\NewsAreaController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\PricingController;
@@ -33,7 +34,7 @@ Route::get('/news-area', [NewsAreaController::class, 'newsArea'])->name('front.n
 Route::get('/portfolio', [PortfolioController::class, 'portfolio'])->name('front.portfolio');
 Route::get('/pricing', [PricingController::class, 'pricing'])->name('front.pricing');
 Route::get('/resume', [ResumeController::class, 'resume'])->name('front.resume');
-Route::get('/service', [ServiceController::class, 'service'])->name('front.service');
+Route::get('/feature', [ServiceController::class, 'feature'])->name('front.feature');
 Route::get('/testimonial', [TestimonialController::class, 'testimonial'])->name('front.testimonial');
 
 //Route::middleware([
@@ -45,3 +46,4 @@ Route::get('/testimonial', [TestimonialController::class, 'testimonial'])->name(
 //        return view('dashboard');
 //    })->name('dashboard');
 //});
+

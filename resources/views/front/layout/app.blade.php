@@ -8,18 +8,55 @@
     <meta name="robots" content="noindex, follow"/>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/images/logo/logo.png') }}">
-    <!-- CSS
-    ============================================ -->
+
+    <!-- Favicon ============================================ -->
+    <link id="theme-dark-fav-icon" rel="shortcut icon" type="image/x-icon"
+          href="{{ asset('assets/images/logo/logo.png') }}" style="filter: invert(1) brightness(2);" disabled>
+
+    <link id="theme-white-fav-icon" rel="shortcut icon" type="image/x-icon"
+          href="{{ asset('assets/images/logo/logo.png') }}">
+
+    <!-- CSS ============================================ -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.css">
-    <link rel="stylesheet" href="{{ asset('assets/css/vendor/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/vendor/slick.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/vendor/slick-theme.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/vendor/aos.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/plugins/feature.css') }}">
-    <!-- Style css -->
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+
+    <!-- Default theme (Dark Theme) -->
+    <link id="theme-dark" rel="stylesheet" href="{{ asset('assets/css/vendor/bootstrap.min.css') }}" disabled>
+    <link id="theme-dark-slick" rel="stylesheet" href="{{ asset('assets/css/vendor/slick.css') }}" disabled>
+    <link id="theme-dark-slick-theme" rel="stylesheet" href="{{ asset('assets/css/vendor/slick-theme.css') }}" disabled>
+    <link id="theme-dark-aos" rel="stylesheet" href="{{ asset('assets/css/vendor/aos.css') }}" disabled>
+    <link id="theme-dark-feature" rel="stylesheet" href="{{ asset('assets/css/plugins/feature.css') }}" disabled>
+    <link id="theme-dark-style" rel="stylesheet" href="{{ asset('assets/css/style.css') }}" disabled>
+
+    <!-- Theme switcher (White Theme) -->
+    <link id="theme-white" rel="stylesheet" href="{{ asset('assets-white-version/css/vendor/bootstrap.min.css') }}">
+    <link id="theme-white-slick" rel="stylesheet" href="{{ asset('assets-white-version/css/vendor/slick.css') }}">
+    <link id="theme-white-slick-theme" rel="stylesheet"
+          href="{{ asset('assets-white-version/css/vendor/slick-theme.css') }}">
+    <link id="theme-white-aos" rel="stylesheet" href="{{ asset('assets-white-version/css/vendor/aos.css') }}">
+    <link id="theme-white-feature" rel="stylesheet" href="{{ asset('assets-white-version/css/plugins/feature.css') }}">
+    <link id="theme-white-style" rel="stylesheet" href="{{ asset('assets-white-version/css/style.css') }}">
+
+    <noscript>
+        <style>
+            .no-js body {
+                display: none;
+            }
+        </style>
+        <meta http-equiv="refresh" content="0;url=https://muhammadadi-il.github.io/no-script-warning/">
+    </noscript>
+    <style>
+        /* Add this to your CSS file */
+        body.theme-transition {
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+
+        .toggle-theme {
+            outline: none;
+            width: 2rem;
+            border: none;
+            padding-left: 2rem;
+        }
+    </style>
 </head>
 <style>
     @font-face {
@@ -44,7 +81,8 @@
     }
 </style>
 
-<body class="template-color-1 spybody" data-spy="scroll" data-target=".navbar-example2" data-offset="70">
+<body class="template-color-1 spybody white-version" data-spy="scroll" data-target=".navbar-example2" data-offset="70">
+<body class="template-color-1 spybody " data-spy="scroll" data-target=".navbar-example2" data-offset="70" disabled>
 
 <!-- Start Header -->
 <header class="rn-header haeder-default black-logo-version header--fixed header--sticky">
@@ -54,9 +92,15 @@
             <div class="header-left">
                 <div class="logo">
                     <a href="{{ route('front.home') }}">
-                        <img src="{{ asset('assets/images/logo/logo.png') }}" alt="logo"
-                             style="filter: invert(1) brightness(2); width: 5rem;">
-                        <span class="own-name">MAK</span>
+
+                        <!-- Top Logos -->
+                        <img id="theme-dark-top-logo" class="theme-logo"
+                             src="{{ asset('assets/images/logo/logo.png') }}" alt="logo"
+                             style="filter: invert(1) brightness(2); width: 5rem;" disabled>
+
+                        <img id="theme-white-top-logo" class="theme-logo"
+                             src="{{ asset('assets/images/logo/logo.png') }}" alt="logo" style="width: 5rem;">
+                        {{--<span class="own-name">MAK</span>--}}
                     </a>
                 </div>
             </div>
@@ -66,32 +110,49 @@
         <div class="col-lg-10 col-6">
             <div class="header-center">
                 <nav id="sideNav" class="mainmenu-nav navbar-example2 d-none d-xl-block onepagenav">
-                    <!-- Start Mainmenu Nav -->
+                    <!-- Start Main menu Nav -->
                     <ul class="primary-menu nav nav-pills">
-                        <li class="nav-item"><a class="nav-link" href="{{ route('front.home') }}">Home</a></li>
-                        <li class="nav-item"><a class="nav-link"
-                                                href="{{ route('front.service') }}">Features</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{ route('front.portfolio') }}">Portfolio</a>
+                        <li class="nav-item current">
+                            <a class="nav-link" href="{{ route('front.home') }}">Home</a>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="{{ route('front.resume') }}">Resume</a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('front.feature') }}">Features</a>
                         </li>
-                        <li class="nav-item current"><a class="nav-link" href="{{ route('front.client') }}">Clients</a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('front.portfolio') }}">Portfolio</a>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="{{ route('front.pricing') }}">Pricing</a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('front.resume') }}">Resume</a>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="{{ route('front.news.area') }}">blog</a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('front.client') }}">Clients</a>
                         </li>
-                        <li class="nav-item"><a class="nav-link"
-                                                href="{{ route('front.contact') }}">Contact</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('front.pricing') }}">Pricing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('front.news.area') }}">blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('front.contact') }}">Contact</a>
+                        </li>
                     </ul>
-                    <!-- End Mainmenu Nav -->
+                    <!-- End Main menu Nav -->
                 </nav>
                 <!-- Start Header Right  -->
                 <div class="header-right">
                     <a class="rn-btn" target="_blank"
-                       href="https://themeforest.net/checkout/from_item/33188244?license=regular"><span>BUY NOW</span></a>
+                       href="https://themeforest.net/checkout/from_item/33188244?license=regular">
+                        <span>BUY NOW</span>
+                    </a>
+
+                    <button id="toggle-theme" class="toggle-theme" aria-label="Toggle Theme">
+                        <i title="light-theme" data-feather="sun" id="sun-icon" class="theme-icon"></i>
+                        <i title="dark-theme" data-feather="moon" id="moon-icon" class="theme-icon"></i>
+                    </button>
+
                     <div class="hamberger-menu d-block d-xl-none">
-                        <i id="menuBtn" class="feather-menu humberger-menu"></i>
+                        <i id="menuBtn" class="feather-menu humberger-menu" data-feather="menu"></i>
                     </div>
                     <div class="close-menu d-block">
                             <span class="closeTrigger">
@@ -114,33 +175,44 @@
         <div class="menu-top">
             <div class="menu-header">
                 <a class="logo" href="{{ route('front.home') }}">
-                    <img src="assets/images/logo/logos-circle.png" alt="Personal Portfolio">
+                    <img src="{{ asset('assets/images/logo/logo.png') }}" alt="Personal Portfolio"
+                         style="filter: invert(1) brightness(2); width: 5rem;">
                 </a>
                 <div class="close-button">
                     <button class="close-menu-activation close"><i data-feather="x"></i></button>
                 </div>
             </div>
-            <p class="discription">Inbio is a personal portfolio template. You can customize all.</p>
+            <p class="discription">Mak is a personal portfolio template. You can customize all.</p>
         </div>
         <div class="content">
             <ul class="primary-menu nav nav-pills onepagenav">
-                <li class="nav-item current"><a class="nav-link smoth-animation active" href="{{ route('front.home') }}">Home</a></li>
-                <li class="nav-item"><a class="nav-link smoth-animation" href="{{ route('front.service') }}">Features</a>
+                <li class="nav-item current">
+                    <a class="nav-link smoth-animation active" href="{{ route('front.home') }}">Home</a>
                 </li>
-                <li class="nav-item"><a class="nav-link smoth-animation"
-                                        href="{{ route('front.portfolio') }}">Portfolio</a></li>
-                <li class="nav-item"><a class="nav-link smoth-animation" href="{{ route('front.resume') }}">Resume</a>
+                <li class="nav-item">
+                    <a class="nav-link smoth-animation" href="{{ route('front.feature') }}">Features</a>
                 </li>
-                <li class="nav-item"><a class="nav-link smoth-animation" href="{{ route('front.client') }}">Clients</a>
+                <li class="nav-item">
+                    <a class="nav-link smoth-animation" href="{{ route('front.portfolio') }}">Portfolio</a>
                 </li>
-                <li class="nav-item"><a class="nav-link smoth-animation" href="{{ route('front.pricing') }}">Pricing</a>
+                <li class="nav-item">
+                    <a class="nav-link smoth-animation" href="{{ route('front.resume') }}">Resume</a>
                 </li>
-                <li class="nav-item"><a class="nav-link smoth-animation" href="{{ route('front.news.area') }}">blog</a>
+                <li class="nav-item">
+                    <a class="nav-link smoth-animation" href="{{ route('front.client') }}">Clients</a>
                 </li>
-                <li class="nav-item"><a class="nav-link smoth-animation" href="{{ route('front.contact') }}">Contact</a>
+                <li class="nav-item">
+                    <a class="nav-link smoth-animation" href="{{ route('front.pricing') }}">Pricing</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link smoth-animation" href="{{ route('front.news.area') }}">blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link smoth-animation" href="{{ route('front.contact') }}">Contact</a>
                 </li>
             </ul>
-            <!-- social sharea area -->
+
+            <!-- social share area -->
             <div class="social-share-style-1 mt--40">
                 <span class="title">find with me</span>
                 <ul class="social-share d-flex liststyle">
@@ -200,7 +272,8 @@
                         <div class="col-lg-6">
                             <div class="portfolio-popup-thumbnail">
                                 <div class="image">
-                                    <img class="w-100" src="assets/images/portfolio/portfolio-04.jpg" alt="slide">
+                                    <img class="w-100" src="{{ asset('assets/images/portfolio/portfolio-04.jpg') }}"
+                                         alt="slide">
                                 </div>
                             </div>
                         </div>
@@ -250,9 +323,10 @@
                 <!-- End of .modal-header -->
 
                 <div class="modal-body">
-                    <img src="assets/images/blog/blog-big-01.jpg" alt="news modal" class="img-fluid modal-feat-img">
+                    <img src="{{ asset('assets/images/blog/blog-big-01.jpg') }}" alt="news modal"
+                         class="img-fluid modal-feat-img">
                     <div class="news-details">
-                        <span class="date">2 May, 2021</span>
+                        <span class="date">2 May 2021</span>
                         <h2 class="title">Digital Marketo to Their New Office.</h2>
                         <p>Nobis eleifend option congue nihil imperdiet doming id quod mazim placerat
                             facer
@@ -361,12 +435,19 @@
     <div class="demo-modal-area">
         <div class="wrapper">
             <div class="close-icon">
-                <button class="demo-close-btn"><span class="feather-x"></span></button>
+                <button class="demo-close-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="feather feather-x">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
             </div>
             <div class="rn-modal-inner">
                 <div class="demo-top text-center">
                     <h4 class="title">MAK</h4>
-                    <p class="subtitle">Its a personal portfolio template. You can built any personal website
+                    <p class="subtitle">Create a personal portfolio template. You can build any personal website
                         easily.</p>
                 </div>
                 <ul class="popuptab-area nav nav-tabs" id="popuptab" role="tablist">
@@ -390,7 +471,8 @@
                                         <div class="inner">
                                             <div class="thumbnail">
                                                 <a href="{{ route('front.home') }}">
-                                                    <img class="w-100" src="assets/images/demo/main-demo.png"
+                                                    <img class="w-100"
+                                                         src="{{ asset('assets/images/demo/main-demo.png') }}"
                                                          alt="Personal Portfolio">
                                                     <span class="overlay-content">
                                                     <span class="overlay-text">View Demo <i
@@ -412,7 +494,8 @@
                                         <div class="inner badge-2">
                                             <div class="thumbnail">
                                                 <a href="index-technician.html">
-                                                    <img class="w-100" src="assets/images/demo/index-technician.png"
+                                                    <img class="w-100"
+                                                         src="{{ asset('assets/images/demo/index-technician.png') }}"
                                                          alt="Personal Portfolio">
                                                     <span class="overlay-content">
                                                     <span class="overlay-text">View Demo <i
@@ -434,7 +517,8 @@
                                         <div class="inner badge-2">
                                             <div class="thumbnail">
                                                 <a href="index-model.html">
-                                                    <img class="w-100" src="assets/images/demo/home-model-v2.png"
+                                                    <img class="w-100"
+                                                         src="{{ asset('assets/images/demo/home-model-v2.png') }}"
                                                          alt="Personal Portfolio">
                                                     <span class="overlay-content">
                                                     <span class="overlay-text">View Demo <i
@@ -456,7 +540,8 @@
                                         <div class="inner badge-1">
                                             <div class="thumbnail">
                                                 <a href="home-consulting.html">
-                                                    <img class="w-100" src="assets/images/demo/home-consulting.png"
+                                                    <img class="w-100"
+                                                         src="{{ asset('assets/images/demo/home-consulting.png') }}"
                                                          alt="Personal Portfolio">
                                                     <span class="overlay-content">
                                                     <span class="overlay-text">View Demo <i
@@ -478,7 +563,8 @@
                                         <div class="inner badge-1">
                                             <div class="thumbnail">
                                                 <a href="fashion-designer.html">
-                                                    <img class="w-100" src="assets/images/demo/fashion-designer.png"
+                                                    <img class="w-100"
+                                                         src="{{ asset('assets/images/demo/fashion-designer.png') }}"
                                                          alt="Personal Portfolio">
                                                     <span class="overlay-content">
                                                     <span class="overlay-text">View Demo <i
@@ -501,7 +587,8 @@
                                         <div class="inner">
                                             <div class="thumbnail">
                                                 <a href="index-developer.html">
-                                                    <img class="w-100" src="assets/images/demo/developer.png"
+                                                    <img class="w-100"
+                                                         src="{{ asset('assets/images/demo/developer.png') }}"
                                                          alt="Personal Portfolio">
                                                     <span class="overlay-content">
                                                     <span class="overlay-text">View Demo <i
@@ -523,7 +610,8 @@
                                         <div class="inner">
                                             <div class="thumbnail">
                                                 <a href="instructor-fitness.html">
-                                                    <img class="w-100" src="assets/images/demo/instructor-fitness.png"
+                                                    <img class="w-100"
+                                                         src="{{ asset('assets/images/demo/instructor-fitness.png') }}"
                                                          alt="Personal Portfolio">
                                                     <span class="overlay-content">
                                                     <span class="overlay-text">View Demo <i
@@ -545,7 +633,8 @@
                                         <div class="inner badge-1">
                                             <div class="thumbnail">
                                                 <a href="home-web-Developer.html">
-                                                    <img class="w-100" src="assets/images/demo/home-model.png"
+                                                    <img class="w-100"
+                                                         src="{{ asset('assets/images/demo/home-model.png') }}"
                                                          alt="Personal Portfolio">
                                                     <span class="overlay-content">
                                                     <span class="overlay-text">View Demo <i
@@ -568,7 +657,8 @@
                                         <div class="inner">
                                             <div class="thumbnail">
                                                 <a href="home-designer.html">
-                                                    <img class="w-100" src="assets/images/demo/home-video.png"
+                                                    <img class="w-100"
+                                                         src="{{ asset('assets/images/demo/home-video.png') }}"
                                                          alt="Personal Portfolio">
                                                     <span class="overlay-content">
                                                     <span class="overlay-text">View Demo <i
@@ -590,7 +680,8 @@
                                         <div class="inner">
                                             <div class="thumbnail">
                                                 <a href="home-content-writer.html">
-                                                    <img class="w-100" src="assets/images/demo/text-rotet.png"
+                                                    <img class="w-100"
+                                                         src="{{ asset('assets/images/demo/text-rotet.png') }}"
                                                          alt="Personal Portfolio">
                                                     <span class="overlay-content">
                                                     <span class="overlay-text">View Demo <i
@@ -613,7 +704,8 @@
                                         <div class="inner">
                                             <div class="thumbnail">
                                                 <a href="home-instructor.html">
-                                                    <img class="w-100" src="assets/images/demo/index-boxed.png"
+                                                    <img class="w-100"
+                                                         src="{{ asset('assets/images/demo/index-boxed.png') }}"
                                                          alt="Personal Portfolio">
                                                     <span class="overlay-content">
                                                     <span class="overlay-text">View Demo <i
@@ -635,7 +727,8 @@
                                         <div class="inner">
                                             <div class="thumbnail">
                                                 <a href="home-freelancer.html">
-                                                    <img class="w-100" src="assets/images/demo/home-sticky.png"
+                                                    <img class="w-100"
+                                                         src="{{ asset('assets/images/demo/home-sticky.png') }}"
                                                          alt="Personal Portfolio">
                                                     <span class="overlay-content">
                                                     <span class="overlay-text">View Demo <i
@@ -657,7 +750,8 @@
                                         <div class="inner">
                                             <div class="thumbnail">
                                                 <a href="home-photographer.html">
-                                                    <img class="w-100" src="assets/images/demo/index-bg-image.png"
+                                                    <img class="w-100"
+                                                         src="{{ asset('assets/images/demo/index-bg-image.png') }}"
                                                          alt="Personal Portfolio">
                                                     <span class="overlay-content">
                                                     <span class="overlay-text">View Demo <i
@@ -680,7 +774,8 @@
                                         <div class="inner">
                                             <div class="thumbnail">
                                                 <a href="index-politician.html">
-                                                    <img class="w-100" src="assets/images/demo/front-end.png"
+                                                    <img class="w-100"
+                                                         src="{{ asset('assets/images/demo/front-end.png') }}"
                                                          alt="Personal Portfolio">
                                                     <span class="overlay-content">
                                                     <span class="overlay-text">View Demo <i
@@ -702,7 +797,8 @@
                                         <div class="inner">
                                             <div class="thumbnail">
                                                 <a href="#">
-                                                    <img class="w-100" src="assets/images/demo/coming-soon.png"
+                                                    <img class="w-100"
+                                                         src="{{ asset('assets/images/demo/coming-soon.png') }}"
                                                          alt="Personal Portfolio">
                                                 </a>
                                             </div>
@@ -728,7 +824,7 @@
                                             <div class="thumbnail">
                                                 <a href="index-white-version.html">
                                                     <img class="w-100"
-                                                         src="assets/images/demo/main-demo-white-version.png"
+                                                         src="{{ asset('assets/images/demo/main-demo-white-version.png') }}"
                                                          alt="Personal Portfolio">
                                                     <span class="overlay-content">
                                                     <span class="overlay-text">View Demo <i
@@ -751,7 +847,7 @@
                                             <div class="thumbnail">
                                                 <a href="index-technician-white-version.html">
                                                     <img class="w-100"
-                                                         src="assets/images/demo/index-technician-white-version.png"
+                                                         src="{{ asset('assets/images/demo/index-technician-white-version.png') }}"
                                                          alt="Personal Portfolio">
                                                     <span class="overlay-content">
                                                     <span class="overlay-text">View Demo <i
@@ -774,7 +870,8 @@
                                         <div class="inner badge-2">
                                             <div class="thumbnail">
                                                 <a href="index-model-white-version.html">
-                                                    <img class="w-100" src="assets/images/demo/home-model-v2-white.png"
+                                                    <img class="w-100"
+                                                         src="{{ asset('assets/images/demo/home-model-v2-white.png') }}"
                                                          alt="Personal Portfolio">
                                                     <span class="overlay-content">
                                                     <span class="overlay-text">View Demo <i
@@ -798,7 +895,7 @@
                                             <div class="thumbnail">
                                                 <a href="home-consulting-white-version.html">
                                                     <img class="w-100"
-                                                         src="assets/images/demo/home-consulting-white-version.png"
+                                                         src="{{ asset('assets/images/demo/home-consulting-white-version.png') }}"
                                                          alt="Personal Portfolio">
                                                     <span class="overlay-content">
                                                     <span class="overlay-text">View Demo <i
@@ -822,7 +919,7 @@
                                             <div class="thumbnail">
                                                 <a href="fashion-designer-white-version.html">
                                                     <img class="w-100"
-                                                         src="assets/images/demo/fashion-designer-white-version.png"
+                                                         src="{{ asset('assets/images/demo/fashion-designer-white-version.png') }}"
                                                          alt="Personal Portfolio">
                                                     <span class="overlay-content">
                                                     <span class="overlay-text">View Demo <i
@@ -847,7 +944,7 @@
                                             <div class="thumbnail">
                                                 <a href="index-developer-white-version.html">
                                                     <img class="w-100"
-                                                         src="assets/images/demo/developer-white-version.png"
+                                                         src="{{ asset('assets/images/demo/developer-white-version.png') }}"
                                                          alt="Personal Portfolio">
                                                     <span class="overlay-content">
                                                     <span class="overlay-text">View Demo <i
@@ -871,7 +968,7 @@
                                             <div class="thumbnail">
                                                 <a href="instructor-fitness-white-version.html">
                                                     <img class="w-100"
-                                                         src="assets/images/demo/instructor-fitness-white-version.png"
+                                                         src="{{ asset('assets/images/demo/instructor-fitness-white-version.png') }}"
                                                          alt="Personal Portfolio">
                                                     <span class="overlay-content">
                                                     <span class="overlay-text">View Demo <i
@@ -895,7 +992,7 @@
                                             <div class="thumbnail">
                                                 <a href="home-web-developer-white-version.html">
                                                     <img class="w-100"
-                                                         src="assets/images/demo/home-model-white-version.png"
+                                                         src="{{ asset('assets/images/demo/home-model-white-version.png') }}"
                                                          alt="Personal Portfolio">
                                                     <span class="overlay-content">
                                                     <span class="overlay-text">View Demo <i
@@ -920,7 +1017,7 @@
                                             <div class="thumbnail">
                                                 <a href="home-designer-white-version.html">
                                                     <img class="w-100"
-                                                         src="assets/images/demo/home-video-white-version.png"
+                                                         src="{{ asset('assets/images/demo/home-video-white-version.png') }}"
                                                          alt="Personal Portfolio">
                                                     <span class="overlay-content">
                                                     <span class="overlay-text">View Demo <i
@@ -945,7 +1042,7 @@
                                             <div class="thumbnail">
                                                 <a href="home-content-writer-white-version.html">
                                                     <img class="w-100"
-                                                         src="assets/images/demo/text-rotet-white-version.png"
+                                                         src="{{ asset('assets/images/demo/text-rotet-white-version.png') }}"
                                                          alt="Personal Portfolio">
                                                     <span class="overlay-content">
                                                     <span class="overlay-text">View Demo <i
@@ -969,7 +1066,7 @@
                                             <div class="thumbnail">
                                                 <a href="home-instructor-white-version.html">
                                                     <img class="w-100"
-                                                         src="assets/images/demo/index-boxed-white-version.png"
+                                                         src="{{ asset('assets/images/demo/index-boxed-white-version.png') }}"
                                                          alt="Personal Portfolio">
                                                     <span class="overlay-content">
                                                     <span class="overlay-text">View Demo <i
@@ -993,7 +1090,7 @@
                                             <div class="thumbnail">
                                                 <a href="home-freelancer-white-version.html">
                                                     <img class="w-100"
-                                                         src="assets/images/demo/home-sticky-white-version.png"
+                                                         src="{{ asset('assets/images/demo/home-sticky-white-version.png') }}"
                                                          alt="Personal Portfolio">
                                                     <span class="overlay-content">
                                                     <span class="overlay-text">View Demo <i
@@ -1017,7 +1114,7 @@
                                             <div class="thumbnail">
                                                 <a href="home-photographer-white-version.html">
                                                     <img class="w-100"
-                                                         src="assets/images/demo/index-bg-image-white-version.png"
+                                                         src="{{ asset('assets/images/demo/index-bg-image-white-version.png') }}"
                                                          alt="Personal Portfolio">
                                                     <span class="overlay-content">
                                                     <span class="overlay-text">View Demo <i
@@ -1041,7 +1138,7 @@
                                             <div class="thumbnail">
                                                 <a href="index-politician-white-version.html">
                                                     <img class="w-100"
-                                                         src="assets/images/demo/front-end-white-version.png"
+                                                         src="{{ asset('assets/images/demo/front-end-white-version.png') }}"
                                                          alt="Personal Portfolio">
                                                     <span class="overlay-content">
                                                     <span class="overlay-text">View Demo <i
@@ -1064,7 +1161,8 @@
                                         <div class="inner">
                                             <div class="thumbnail">
                                                 <a href="#">
-                                                    <img class="w-100" src="assets/images/demo/coming-soon.png"
+                                                    <img class="w-100"
+                                                         src="{{ asset('assets/images/demo/coming-soon.png') }}"
                                                          alt="Personal Portfolio">
                                                 </a>
                                             </div>
@@ -1096,14 +1194,18 @@
 
                     <div class="logo">
                         <a href="{{ route('front.home') }}">
-                            <img src="{{ asset('assets/images/logo/logo.png') }}" alt="logo"
-                                 style="filter: invert(1) brightness(2); width: 5rem;">
+                            <!-- Footer Logos -->
+                            <img id="theme-dark-footer-logo" class="theme-logo"
+                                 src="{{ asset('assets/images/logo/logo.png') }}" alt="logo"
+                                 style="filter: invert(1) brightness(2); width: 5rem;" disabled>
+
+                            <img id="theme-white-footer-logo" class="theme-logo"
+                                 src="{{ asset('assets/images/logo/logo.png') }}" alt="logo" style="width: 5rem;">
                         </a>
                     </div>
 
                     <p class="description mt--30">Copyright © 2022. All rights reserved by
-                        <a target="_blank"
-                           href="mailto:adilm0616@gmail.com">Muhammad Adil Khan.</a>
+                        <a href="mailto:adilm0616@gmail.com">Muhammad Adil Khan.</a>
                     </p>
                 </div>
             </div>
@@ -1113,20 +1215,41 @@
 <!-- End Footer Area -->
 
 <!-- JS ============================================ -->
-<script src="assets/js/vendor/jquery.js"></script>
-<script src="assets/js/vendor/modernizer.min.js"></script>
-<script src="assets/js/vendor/feather.min.js"></script>
-<script src="assets/js/vendor/slick.min.js"></script>
-<script src="assets/js/vendor/bootstrap.js"></script>
-<script src="assets/js/vendor/text-type.js"></script>
-<script src="assets/js/vendor/wow.js"></script>
-<script src="assets/js/vendor/aos.js"></script>
-<script src="assets/js/vendor/particles.js"></script>
-<script src="assets/js/vendor/jquery-one-page-nav.js"></script>
-<!-- main JS -->
-<script src="assets/js/main.js"></script>
-
 <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-</body>
 
+<!-- Default theme (Dark Theme) -->
+<script id="theme-dark-js" src="{{ asset('assets/js/vendor/jquery.js') }}" disabled></script>
+<script id="theme-dark-modernizer" src="{{ asset('assets/js/vendor/modernizer.min.js') }}" disabled></script>
+<script id="theme-dark-feather" src="{{ asset('assets/js/vendor/feather.min.js') }}" disabled></script>
+<script id="theme-dark-slick" src="{{ asset('assets/js/vendor/slick.min.js') }}" disabled></script>
+<script id="theme-dark-bootstrap" src="{{ asset('assets/js/vendor/bootstrap.js') }}" disabled></script>
+<script id="theme-dark-text-type" src="{{ asset('assets/js/vendor/text-type.js') }}" disabled></script>
+<script id="theme-dark-wow" src="{{ asset('assets/js/vendor/wow.js') }}" disabled></script>
+<script id="theme-dark-aos" src="{{ asset('assets/js/vendor/aos.js') }}" disabled></script>
+<script id="theme-dark-particles" src="{{ asset('assets/js/vendor/particles.js') }}" disabled></script>
+<script id="theme-dark-one-page-nav" src="{{ asset('assets/js/vendor/jquery-one-page-nav.js') }}" disabled></script>
+
+<!-- main JS -->
+<script src="{{ asset('assets/js/main.js') }}"></script>
+
+<!-- Theme switcher (White Theme) -->
+<script id="theme-white-js" src="{{ asset('assets-white-version/js/vendor/jquery.js') }}"></script>
+<script id="theme-white-modernizer" src="{{ asset('assets-white-version/js/vendor/modernizer.min.js') }}"></script>
+<script id="theme-white-feather" src="{{ asset('assets-white-version/js/vendor/feather.min.js') }}"></script>
+<script id="theme-white-slick" src="{{ asset('assets-white-version/js/vendor/slick.min.js') }}"></script>
+<script id="theme-white-bootstrap" src="{{ asset('assets-white-version/js/vendor/bootstrap.js') }}"></script>
+<script id="theme-white-text-type" src="{{ asset('assets-white-version/js/vendor/text-type.js') }}"></script>
+<script id="theme-white-wow" src="{{ asset('assets-white-version/js/vendor/wow.js') }}"></script>
+<script id="theme-white-aos" src="{{ asset('assets-white-version/js/vendor/aos.js') }}"></script>
+<script id="theme-white-particles" src="{{ asset('assets-white-version/js/vendor/particles.js') }}"></script>
+<script id="theme-white-one-page-nav"
+        src="{{ asset('assets-white-version/js/vendor/jquery-one-page-nav.js') }}"></script>
+
+<!-- main white version JS -->
+<script src="{{ asset('assets-white-version/js/main.js') }}"></script>
+
+<!-- theme switcher JS -->
+<script src="{{ asset('theme-switcher/theme-switcher.js') }}"></script>
+
+</body>
 </html>

@@ -9,7 +9,7 @@
                         <div class="content">
                             <div class="inner">
                                 <span class="subtitle">Welcome to my world</span>
-                                <h1 class="title">Hi, I’m <span>Muhammad Adil</span><br>
+                                <h1 class="title">Hi, I’m <span>John Lee</span><br>
                                     <span class="header-caption" id="page-top">
                                             <!-- type headline start-->
                                             <span class="cd-headline clip is-full-width">

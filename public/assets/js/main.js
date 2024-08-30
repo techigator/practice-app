@@ -136,8 +136,8 @@
                 arrows: true,
                 adaptiveHeight: true,
                 cssEase: 'linear',
-                prevArrow: '<button class="slide-arrow prev-arrow"><i class="feather-arrow-left"></i></button>',
-                nextArrow: '<button class="slide-arrow next-arrow"><i class="feather-arrow-right"></i></button>'
+                prevArrow: '<button class="slide-arrow prev-arrow"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg></button>',
+                nextArrow: '<button class="slide-arrow next-arrow"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>'
             });
 
             $('.testimonial-item-one').slick({
@@ -168,8 +168,8 @@
                 arrows: true,
                 cssEase: 'linear',
                 adaptiveHeight: true,
-                prevArrow: '<button class="slide-arrow prev-arrow"><i class="feather-arrow-left"></i></button>',
-                nextArrow: '<button class="slide-arrow next-arrow"><i class="feather-arrow-right"></i></button>',
+                prevArrow: '<button class="slide-arrow prev-arrow"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg></button>',
+                nextArrow: '<button class="slide-arrow next-arrow"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>',
                 responsive: [{
                     breakpoint: 1124,
                     settings: {
@@ -205,8 +205,8 @@
                 arrows: true,
                 cssEase: 'linear',
                 adaptiveHeight: true,
-                prevArrow: '<button class="slide-arrow prev-arrow"><i class="feather-arrow-left"></i></button>',
-                nextArrow: '<button class="slide-arrow next-arrow"><i class="feather-arrow-right"></i></button>',
+                prevArrow: '<button class="slide-arrow prev-arrow"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg></button>',
+                nextArrow: '<button class="slide-arrow next-arrow"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></button>',
                 responsive: [{
                     breakpoint: 1124,
                     settings: {
@@ -434,6 +434,22 @@
 
     }
     imJs.m();
+
+    // document.addEventListener('contextmenu', function(e) {
+    //     e.preventDefault();
+    // });
+    //
+    // document.addEventListener('keydown', function(e) {
+    //     if (e.ctrlKey && (e.key === 'u' || e.key === 'U')) {
+    //         e.preventDefault();
+    //     }
+    //     if (e.ctrlKey && e.shiftKey && (e.key === 'i' || e.key === 'I')) {
+    //         e.preventDefault();
+    //     }
+    //     if (e.key === 'F12') {
+    //         e.preventDefault();
+    //     }
+    // });
 
 
 })(jQuery, window)

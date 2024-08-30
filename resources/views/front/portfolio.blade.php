@@ -20,7 +20,7 @@
                         <div class="inner">
                             <div class="thumbnail">
                                 <a href="javascript:void(0)">
-                                    <img src="assets/images/portfolio/portfolio-01.jpg" alt="Personal Portfolio Images">
+                                    <img src="{{ asset('assets/images/portfolio/portfolio-01.jpg') }}" alt="Personal Portfolio Images">
                                 </a>
                             </div>
                             <div class="content">
@@ -29,12 +29,19 @@
                                         <a href="javascript:void(0)">Development</a>
                                     </div>
                                     <div class="meta">
-                                            <span><a href="javascript:void(0)"><i class="feather-heart"></i></a>
-                                        600</span>
+                                            <span>
+                                                <a href="javascript:void(0)">
+                                                    <i class="feather-heart" data-feather="heart"></i>
+                                                </a>
+                                                600
+                                            </span>
                                     </div>
                                 </div>
-                                <h4 class="title"><a href="javascript:void(0)">The services provide for design <i
-                                            class="feather-arrow-up-right"></i></a></h4>
+                                <h4 class="title">
+                                    <a href="javascript:void(0)">The services provide for design
+                                        <i class="title-feather" data-feather="arrow-up-right"></i>
+                                    </a>
+                                </h4>
                             </div>
                         </div>
                     </div>
@@ -57,12 +64,19 @@
                                         <a href="javascript:void(0)">Application</a>
                                     </div>
                                     <div class="meta">
-                                            <span><a href="javascript:void(0)"><i class="feather-heart"></i></a>
-                                        750</span>
+                                            <span>
+                                                <a href="javascript:void(0)">
+                                                    <i class="feather-heart" data-feather="heart"></i>
+                                                </a>
+                                                750
+                                            </span>
                                     </div>
                                 </div>
-                                <h4 class="title"><a href="javascript:void(0)">Mobile app landing design & app
-                                        maintain<i class="feather-arrow-up-right"></i></a></h4>
+                                <h4 class="title">
+                                    <a href="javascript:void(0)">Mobile app landing design & a
+                                         maintain<i class="title-feather" data-feather="arrow-up-right"></i>
+                                    </a>
+                                </h4>
                             </div>
                         </div>
                     </div>
@@ -85,12 +99,19 @@
                                         <a href="javascript:void(0)">Photoshop</a>
                                     </div>
                                     <div class="meta">
-                                            <span><a href="javascript:void(0)"><i class="feather-heart"></i></a>
-                                        630</span>
+                                            <span>
+                                                <a href="javascript:void(0)">
+                                                    <i class="feather-heart" data-feather="heart"></i>
+                                                </a>
+                                                630
+                                            </span>
                                     </div>
                                 </div>
-                                <h4 class="title"><a href="javascript:void(0)">Logo design creativity & Application
-                                        <i class="feather-arrow-up-right"></i></a></h4>
+                                <h4 class="title">
+                                    <a href="javascript:void(0)">Logo design creativity & Application
+                                         <i class="title-feather" data-feather="arrow-up-right"></i>
+                                    </a>
+                                </h4>
                             </div>
                         </div>
                     </div>
@@ -113,12 +134,19 @@
                                         <a href="javascript:void(0)">Figma</a>
                                     </div>
                                     <div class="meta">
-                                            <span><a href="javascript:void(0)"><i class="feather-heart"></i></a>
-                                        360</span>
+                                            <span>
+                                                <a href="javascript:void(0)">
+                                                    <i class="feather-heart" data-feather="heart"></i>
+                                                </a>
+                                                360
+                                            </span>
                                     </div>
                                 </div>
-                                <h4 class="title"><a href="javascript:void(0)">Mobile app landing design &
-                                        Services<i class="feather-arrow-up-right"></i></a></h4>
+                                <h4 class="title">
+                                    <a href="javascript:void(0)">Mobile app landing design
+                                         Services<i class="title-feather" data-feather="arrow-up-right"></i>
+                                    </a>
+                                </h4>
                             </div>
                         </div>
                     </div>
@@ -141,12 +169,19 @@
                                         <a href="javascript:void(0)">Web Design</a>
                                     </div>
                                     <div class="meta">
-                                            <span><a href="javascript:void(0)"><i class="feather-heart"></i></a>
-                                        280</span>
+                                            <span>
+                                                <a href="javascript:void(0)">
+                                                    <i class="feather-heart" data-feather="heart"></i>
+                                                </a>
+                                                280
+                                            </span>
                                     </div>
                                 </div>
-                                <h4 class="title"><a href="javascript:void(0)">Design for tecnology & services<i
-                                            class="feather-arrow-up-right"></i></a></h4>
+                                <h4 class="title">
+                                    <a href="javascript:void(0)">Design for technology & services
+                                        <i class="title-feather" data-feather="arrow-up-right"></i>
+                                    </a>
+                                </h4>
                             </div>
                         </div>
                     </div>
@@ -169,12 +204,19 @@
                                         <a href="javascript:void(0)">Web Design</a>
                                     </div>
                                     <div class="meta">
-                                            <span><a href="javascript:void(0)"><i class="feather-heart"></i></a>
-                                        690</span>
+                                            <span>
+                                                <a href="javascript:void(0)">
+                                                    <i class="feather-heart" data-feather="heart"></i>
+                                                </a>
+                                                690
+                                            </span>
                                     </div>
                                 </div>
-                                <h4 class="title"><a href="javascript:void(0)">App for tecnology & services<i
-                                            class="feather-arrow-up-right"></i></a></h4>
+                                <h4 class="title">
+                                    <a href="javascript:void(0)">App for tecnology & services
+                                        <i class="title-feather" data-feather="arrow-up-right"></i>
+                                    </a>
+                                </h4>
                             </div>
                         </div>
                     </div>

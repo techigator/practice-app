@@ -6982,7 +6982,7 @@ Background Image
 }
 
 .bg_image--12 {
-    background-image: url(../images/bg/bg-image-12.jpg);
+    background-image: url(../images/bg/bg-image-9.jpg);
 }
 
 .bg_image--13 {
@@ -21474,4 +21474,35 @@ body.white-version .rn-btn-ulderline {
 .feather-arrow-right {
     color: var(--color-primary);
     font-size: 32px;
+}
+
+.feather-heart {
+    width: 1.2rem;
+}
+
+.title-feather {
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: var(--transition);
+}
+
+.title:hover .title-feather {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.testimonial .inner .card-description::after {
+    content: "";
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    left: 0;
+    top: -130px;
+    background: transparent;
+    background-image: url(../images/icons/quote.png);
+    background-size: cover;
+    z-index: -1;
+    opacity: 0.5;
+    background-repeat: no-repeat;
+    background-position: center center;
 }

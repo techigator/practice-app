@@ -12,8 +12,8 @@ class ServiceController extends Controller
     /**
      * @return View|Application|Factory|\Illuminate\Contracts\Foundation\Application
      */
-    public function service(): View|Application|Factory|\Illuminate\Contracts\Foundation\Application
+    public function feature(): View|Application|Factory|\Illuminate\Contracts\Foundation\Application
     {
-        return view('front.service');
+        return view('front.feature');
     }
 }
